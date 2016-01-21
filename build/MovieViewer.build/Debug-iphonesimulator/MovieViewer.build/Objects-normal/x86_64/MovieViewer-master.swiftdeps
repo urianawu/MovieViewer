@@ -1,0 +1,6 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "2a385fad821287be763dc4cc5edde02b"
+build_time: [506704175, 522768000]
+inputs:
+  "/Users/Uriana/Projects/MovieViewer/MovieViewer/AppDelegate.swift": [506704172, 0]
+  "/Users/Uriana/Projects/MovieViewer/MovieViewer/ViewController.swift": [506704172, 0]
