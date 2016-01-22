@@ -107,13 +107,34 @@ SWIFT_CLASS("_TtC11MovieViewer11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
+@class UILabel;
+@class UIImageView;
 @class NSCoder;
 
-SWIFT_CLASS("_TtC11MovieViewer14ViewController")
-@interface ViewController : UIViewController
+SWIFT_CLASS("_TtC11MovieViewer9MovieCell")
+@interface MovieCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified title;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified overview;
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified posterView;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * __nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSDictionary;
+@class UITableView;
+@class NSIndexPath;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC11MovieViewer19MovieViewController")
+@interface MovieViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, weak) IBOutlet UITableView * __null_unspecified tableView;
+@property (nonatomic, copy) NSArray<NSDictionary *> * __nullable movies;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
 - (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
