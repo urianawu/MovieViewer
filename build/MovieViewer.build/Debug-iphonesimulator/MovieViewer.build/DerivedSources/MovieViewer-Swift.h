@@ -123,16 +123,18 @@ SWIFT_CLASS("_TtC11MovieViewer9MovieCell")
 @end
 
 @class NSDictionary;
+@class UIRefreshControl;
 @class UITableView;
 @class NSIndexPath;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC11MovieViewer19MovieViewController")
-@interface MovieViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface MovieViewController : UIViewController <UIBarPositioningDelegate, UITableViewDelegate, UIScrollViewDelegate, UISearchBarDelegate, UITableViewDataSource>
 @property (nonatomic, weak) IBOutlet UITableView * __null_unspecified tableView;
 @property (nonatomic, copy) NSArray<NSDictionary *> * __nullable movies;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (void)refreshControlAction:(UIRefreshControl * __nonnull)refreshControl;
 - (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
 - (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;

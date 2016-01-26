@@ -12,7 +12,6 @@
 		C6A78CA51C512C2C007D3F19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A78CA31C512C2C007D3F19 /* Main.storyboard */; };
 		C6A78CA71C512C2C007D3F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6A78CA61C512C2C007D3F19 /* Assets.xcassets */; };
 		C6A78CAA1C512C2C007D3F19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A78CA81C512C2C007D3F19 /* LaunchScreen.storyboard */; };
-		C6A78CB51C512C2C007D3F19 /* MovieViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A78CB41C512C2C007D3F19 /* MovieViewerUITests.swift */; };
 		C6A78CC21C512FDB007D3F19 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A78CC11C512FDB007D3F19 /* MovieViewController.swift */; };
 		C6A78CC51C52D912007D3F19 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A78CC41C52D912007D3F19 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
@@ -37,8 +36,6 @@
 		C6A78CA91C512C2C007D3F19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6A78CAB1C512C2C007D3F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6A78CB01C512C2C007D3F19 /* MovieViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6A78CB41C512C2C007D3F19 /* MovieViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewerUITests.swift; sourceTree = "<group>"; };
-		C6A78CB61C512C2C007D3F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6A78CC11C512FDB007D3F19 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		C6A78CC41C52D912007D3F19 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		FB688EEFA8823F0900C8EEE7 /* Pods-MovieViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				C6A78C9E1C512C2C007D3F19 /* MovieViewer */,
-				C6A78CB31C512C2C007D3F19 /* MovieViewerUITests */,
 				C6A78C9D1C512C2C007D3F19 /* Products */,
 				31CE773243CF1B9523604A9F /* Pods */,
 				914F1B8A688D5B742C454C94 /* Frameworks */,
@@ -112,15 +108,6 @@
 				C6A78CAB1C512C2C007D3F19 /* Info.plist */,
 			);
 			path = MovieViewer;
-			sourceTree = "<group>";
-		};
-		C6A78CB31C512C2C007D3F19 /* MovieViewerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C6A78CB41C512C2C007D3F19 /* MovieViewerUITests.swift */,
-				C6A78CB61C512C2C007D3F19 /* Info.plist */,
-			);
-			path = MovieViewerUITests;
 			sourceTree = "<group>";
 		};
 		C6A78CC31C52D8E8007D3F19 /* Views */ = {
@@ -303,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6A78CB51C512C2C007D3F19 /* MovieViewerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
