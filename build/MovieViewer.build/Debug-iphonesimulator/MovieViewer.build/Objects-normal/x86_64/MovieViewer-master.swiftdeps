@@ -1,7 +1,8 @@
 version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
-options: "e90a8227b3779de2aa4484f2efb6753d"
-build_time: [507156296, 927376000]
+options: "fe4da7907030ee9991d83bdef2559f95"
+build_time: [507271155, 293832000]
 inputs:
-  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/AppDelegate.swift": [506704172, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/MovieViewController.swift": [507252067, 0]
   "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/MovieCell.swift": [506814921, 0]
-  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/MovieViewController.swift": [507156177, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/AppDelegate.swift": [506704172, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/SearchViewController.swift": [507271155, 0]

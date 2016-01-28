@@ -1,0 +1,5 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "71277d59337d0f94370c6573924d09c0"
+build_time: [507165084, 196469000]
+inputs:
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/ChameleonFramework/Pod/Classes/Swift/ChameleonShorthand.swift": [507165010, 0]

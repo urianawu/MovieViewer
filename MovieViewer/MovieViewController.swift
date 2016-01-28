@@ -10,8 +10,7 @@ import UIKit
 import AFNetworking
 import MBProgressHUD
 
-class MovieViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
-    UISearchBarDelegate {
+class MovieViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
 
     @IBOutlet weak var tableView: UITableView!
