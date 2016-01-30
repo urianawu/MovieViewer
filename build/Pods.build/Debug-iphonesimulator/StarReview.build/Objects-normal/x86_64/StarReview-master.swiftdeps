@@ -1,5 +1,0 @@
-version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
-options: "6f51113b96ffa21acfa47a9c67540caa"
-build_time: [507399455, 395772000]
-inputs:
-  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/StarReview/StarReview/StarReview.swift": [507399388, 0]

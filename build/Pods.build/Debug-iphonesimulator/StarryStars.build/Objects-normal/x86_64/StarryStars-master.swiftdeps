@@ -1,5 +1,0 @@
-version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
-options: "fbae01cd6c9ae6907f49ad4f8288b87e"
-build_time: [507400473, 830065000]
-inputs:
-  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/StarryStars/StarryStars/RatingView.swift": [507400403, 0]
