@@ -15,7 +15,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     var titles: [String] = []
-    var movies: [NSDictionary]?
     var filteredData: [String]!
     
     override func viewDidLoad() {
@@ -23,46 +22,20 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
-        
-        let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
-        let request = NSURLRequest(
-            URL: url!,
-            cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
-            timeoutInterval: 10)
-        
-        let session = NSURLSession(
-            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
-            delegate: nil,
-            delegateQueue: NSOperationQueue.mainQueue()
-        )
-        
-        let task: NSURLSessionDataTask = session.dataTaskWithRequest(request,
-            completionHandler: { (dataOrNil, response, error) in
-                if let data = dataOrNil {
-                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
-                        data, options:[]) as? NSDictionary {
-                            MBProgressHUD.hideHUDForView(self.view, animated: true)
-                            self.movies = (responseDictionary["results"] as! [NSDictionary])
-                            
-                            if let movies = self.movies {
-                                for movie in movies{
-                                    let title = movie["title"] as! String
-                                    self.titles.append(title)
-                                }
-
-                            }else {
-                                print("no movies available")
-                            }
-                            
-                            self.filteredData = self.titles
-                            self.tableView.reloadData()
-                    }
+        if let tbc = self.tabBarController as? MovieViewerTabBarController {
+            if let movies = tbc.movies {
+                for movie in movies{
+                    let title = movie["title"] as! String
+                    self.titles.append(title)
                 }
-        })
-        task.resume()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-
+                
+            }else {
+                print("no movies available")
+            }
+            
+            self.filteredData = self.titles
+            self.tableView.reloadData()
+        }
         
     }
     
@@ -80,6 +53,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(indexPath.row, forKey: "movieIndex")
+        defaults.synchronize()
+    }
     
     // This method updates filteredData based on the text in the Search Box
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {

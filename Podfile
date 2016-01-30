@@ -6,7 +6,7 @@ use_frameworks!
 target 'MovieViewer' do
     pod 'AFNetworking'
     pod 'MBProgressHUD'
-    pod 'ChameleonFramework/Swift'
+    pod 'Cosmos'
 end
 
 target 'MovieViewerUITests' do

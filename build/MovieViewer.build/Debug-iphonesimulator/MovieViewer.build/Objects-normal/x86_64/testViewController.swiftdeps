@@ -1,0 +1,379 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "testViewController"
+provides-nominal:
+- "C11MovieViewer18testViewController"
+provides-member:
+- ["C11MovieViewer18testViewController", ""]
+provides-dynamic-lookup:
+- "didReceiveMemoryWarning"
+- "scrollView"
+- "viewDidLoad"
+- "imageView"
+depends-top-level:
+- "UIViewController"
+- "testViewController"
+- "UIScrollView"
+- !private "StringLiteralType"
+- "UIImageView"
+- !private "UIImage"
+- !private "UIColor"
+depends-member:
+- !private ["PSs9AnyObject", "UIColor"]
+- !private ["PSs9AnyObject", "UIImage"]
+- !private ["PSs9AnyObject", "UIImageView"]
+- !private ["PSs9AnyObject", "UIScrollView"]
+- !private ["PSs9AnyObject", "addSubview"]
+- !private ["PSs9AnyObject", "backgroundColor"]
+- !private ["PSs9AnyObject", "blackColor"]
+- !private ["PSs9AnyObject", "bounds"]
+- !private ["PSs9AnyObject", "contentSize"]
+- ["PSs9AnyObject", "didReceiveMemoryWarning"]
+- ["PSs9AnyObject", "imageView"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "scrollView"]
+- !private ["PSs9AnyObject", "view"]
+- ["PSs9AnyObject", "viewDidLoad"]
+- ["PSs9AnyObject", ""]
+- !private ["VSC6CGRect", "size"]
+- !private ["PSs11CVarArgType", "UIColor"]
+- !private ["PSs11CVarArgType", "UIImage"]
+- !private ["PSs11CVarArgType", "UIImageView"]
+- !private ["PSs11CVarArgType", "UIScrollView"]
+- !private ["PSs11CVarArgType", "addSubview"]
+- !private ["PSs11CVarArgType", "backgroundColor"]
+- !private ["PSs11CVarArgType", "blackColor"]
+- !private ["PSs11CVarArgType", "bounds"]
+- !private ["PSs11CVarArgType", "contentSize"]
+- ["PSs11CVarArgType", "didReceiveMemoryWarning"]
+- ["PSs11CVarArgType", "imageView"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "scrollView"]
+- !private ["PSs11CVarArgType", "view"]
+- ["PSs11CVarArgType", "viewDidLoad"]
+- ["PSs11CVarArgType", ""]
+- !private ["PSs23CustomStringConvertible", "UIColor"]
+- !private ["PSs23CustomStringConvertible", "UIImage"]
+- !private ["PSs23CustomStringConvertible", "UIImageView"]
+- !private ["PSs23CustomStringConvertible", "UIScrollView"]
+- !private ["PSs23CustomStringConvertible", "addSubview"]
+- !private ["PSs23CustomStringConvertible", "backgroundColor"]
+- !private ["PSs23CustomStringConvertible", "blackColor"]
+- !private ["PSs23CustomStringConvertible", "bounds"]
+- !private ["PSs23CustomStringConvertible", "contentSize"]
+- ["PSs23CustomStringConvertible", "didReceiveMemoryWarning"]
+- ["PSs23CustomStringConvertible", "imageView"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "scrollView"]
+- !private ["PSs23CustomStringConvertible", "view"]
+- ["PSs23CustomStringConvertible", "viewDidLoad"]
+- ["PSs23CustomStringConvertible", ""]
+- !private ["PSs9Equatable", "UIColor"]
+- !private ["PSs9Equatable", "UIImage"]
+- !private ["PSs9Equatable", "UIImageView"]
+- !private ["PSs9Equatable", "UIScrollView"]
+- !private ["PSs9Equatable", "addSubview"]
+- !private ["PSs9Equatable", "backgroundColor"]
+- !private ["PSs9Equatable", "blackColor"]
+- !private ["PSs9Equatable", "bounds"]
+- !private ["PSs9Equatable", "contentSize"]
+- ["PSs9Equatable", "didReceiveMemoryWarning"]
+- ["PSs9Equatable", "imageView"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "scrollView"]
+- !private ["PSs9Equatable", "size"]
+- !private ["PSs9Equatable", "view"]
+- ["PSs9Equatable", "viewDidLoad"]
+- ["PSs9Equatable", ""]
+- !private ["PSs8Hashable", "UIColor"]
+- !private ["PSs8Hashable", "UIImage"]
+- !private ["PSs8Hashable", "UIImageView"]
+- !private ["PSs8Hashable", "UIScrollView"]
+- !private ["PSs8Hashable", "addSubview"]
+- !private ["PSs8Hashable", "backgroundColor"]
+- !private ["PSs8Hashable", "blackColor"]
+- !private ["PSs8Hashable", "bounds"]
+- !private ["PSs8Hashable", "contentSize"]
+- ["PSs8Hashable", "didReceiveMemoryWarning"]
+- ["PSs8Hashable", "imageView"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "scrollView"]
+- !private ["PSs8Hashable", "view"]
+- ["PSs8Hashable", "viewDidLoad"]
+- ["PSs8Hashable", ""]
+- !private ["PSo8NSCoding", "UIColor"]
+- !private ["PSo8NSCoding", "UIImage"]
+- !private ["PSo8NSCoding", "UIImageView"]
+- !private ["PSo8NSCoding", "UIScrollView"]
+- !private ["PSo8NSCoding", "addSubview"]
+- !private ["PSo8NSCoding", "backgroundColor"]
+- !private ["PSo8NSCoding", "blackColor"]
+- !private ["PSo8NSCoding", "bounds"]
+- !private ["PSo8NSCoding", "contentSize"]
+- ["PSo8NSCoding", "didReceiveMemoryWarning"]
+- ["PSo8NSCoding", "imageView"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "scrollView"]
+- !private ["PSo8NSCoding", "view"]
+- ["PSo8NSCoding", "viewDidLoad"]
+- ["PSo8NSCoding", ""]
+- !private ["PSo9NSCopying", "blackColor"]
+- !private ["PSo26NSExtensionRequestHandling", "UIColor"]
+- !private ["PSo26NSExtensionRequestHandling", "UIImage"]
+- !private ["PSo26NSExtensionRequestHandling", "UIImageView"]
+- !private ["PSo26NSExtensionRequestHandling", "UIScrollView"]
+- ["PSo26NSExtensionRequestHandling", "didReceiveMemoryWarning"]
+- ["PSo26NSExtensionRequestHandling", "imageView"]
+- ["PSo26NSExtensionRequestHandling", "init"]
+- ["PSo26NSExtensionRequestHandling", "scrollView"]
+- !private ["PSo26NSExtensionRequestHandling", "view"]
+- ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
+- ["PSo26NSExtensionRequestHandling", ""]
+- !private ["CSo8NSObject", "UIColor"]
+- !private ["CSo8NSObject", "UIImage"]
+- ["CSo8NSObject", "UIImageView"]
+- ["CSo8NSObject", "UIScrollView"]
+- !private ["CSo8NSObject", "addSubview"]
+- !private ["CSo8NSObject", "backgroundColor"]
+- !private ["CSo8NSObject", "blackColor"]
+- !private ["CSo8NSObject", "bounds"]
+- !private ["CSo8NSObject", "contentSize"]
+- ["CSo8NSObject", "didReceiveMemoryWarning"]
+- ["CSo8NSObject", "imageView"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "scrollView"]
+- !private ["CSo8NSObject", "view"]
+- ["CSo8NSObject", "viewDidLoad"]
+- !private ["PSo16NSObjectProtocol", "UIColor"]
+- !private ["PSo16NSObjectProtocol", "UIImage"]
+- !private ["PSo16NSObjectProtocol", "UIImageView"]
+- !private ["PSo16NSObjectProtocol", "UIScrollView"]
+- !private ["PSo16NSObjectProtocol", "addSubview"]
+- !private ["PSo16NSObjectProtocol", "backgroundColor"]
+- !private ["PSo16NSObjectProtocol", "blackColor"]
+- !private ["PSo16NSObjectProtocol", "bounds"]
+- !private ["PSo16NSObjectProtocol", "contentSize"]
+- ["PSo16NSObjectProtocol", "didReceiveMemoryWarning"]
+- ["PSo16NSObjectProtocol", "imageView"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "scrollView"]
+- !private ["PSo16NSObjectProtocol", "view"]
+- ["PSo16NSObjectProtocol", "viewDidLoad"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "blackColor"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo29UIAccessibilityIdentification", "addSubview"]
+- !private ["PSo29UIAccessibilityIdentification", "backgroundColor"]
+- !private ["PSo29UIAccessibilityIdentification", "bounds"]
+- !private ["PSo29UIAccessibilityIdentification", "contentSize"]
+- !private ["PSo29UIAccessibilityIdentification", "init"]
+- !private ["PSo12UIAppearance", "addSubview"]
+- !private ["PSo12UIAppearance", "backgroundColor"]
+- !private ["PSo12UIAppearance", "bounds"]
+- !private ["PSo12UIAppearance", "contentSize"]
+- !private ["PSo12UIAppearance", "init"]
+- !private ["PSo21UIAppearanceContainer", "UIColor"]
+- !private ["PSo21UIAppearanceContainer", "UIImage"]
+- !private ["PSo21UIAppearanceContainer", "UIImageView"]
+- !private ["PSo21UIAppearanceContainer", "UIScrollView"]
+- !private ["PSo21UIAppearanceContainer", "addSubview"]
+- !private ["PSo21UIAppearanceContainer", "backgroundColor"]
+- !private ["PSo21UIAppearanceContainer", "bounds"]
+- !private ["PSo21UIAppearanceContainer", "contentSize"]
+- ["PSo21UIAppearanceContainer", "didReceiveMemoryWarning"]
+- ["PSo21UIAppearanceContainer", "imageView"]
+- ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "scrollView"]
+- !private ["PSo21UIAppearanceContainer", "view"]
+- ["PSo21UIAppearanceContainer", "viewDidLoad"]
+- ["PSo21UIAppearanceContainer", ""]
+- !private ["CSo7UIColor", "blackColor"]
+- !private ["PSo18UIContentContainer", "UIColor"]
+- !private ["PSo18UIContentContainer", "UIImage"]
+- !private ["PSo18UIContentContainer", "UIImageView"]
+- !private ["PSo18UIContentContainer", "UIScrollView"]
+- ["PSo18UIContentContainer", "didReceiveMemoryWarning"]
+- ["PSo18UIContentContainer", "imageView"]
+- ["PSo18UIContentContainer", "init"]
+- ["PSo18UIContentContainer", "scrollView"]
+- !private ["PSo18UIContentContainer", "view"]
+- ["PSo18UIContentContainer", "viewDidLoad"]
+- ["PSo18UIContentContainer", ""]
+- !private ["PSo17UICoordinateSpace", "addSubview"]
+- !private ["PSo17UICoordinateSpace", "backgroundColor"]
+- !private ["PSo17UICoordinateSpace", "bounds"]
+- !private ["PSo17UICoordinateSpace", "contentSize"]
+- !private ["PSo17UICoordinateSpace", "init"]
+- !private ["PSo13UIDynamicItem", "addSubview"]
+- !private ["PSo13UIDynamicItem", "backgroundColor"]
+- !private ["PSo13UIDynamicItem", "bounds"]
+- !private ["PSo13UIDynamicItem", "contentSize"]
+- !private ["PSo13UIDynamicItem", "init"]
+- !private ["PSo18UIFocusEnvironment", "UIColor"]
+- !private ["PSo18UIFocusEnvironment", "UIImage"]
+- !private ["PSo18UIFocusEnvironment", "UIImageView"]
+- !private ["PSo18UIFocusEnvironment", "UIScrollView"]
+- !private ["PSo18UIFocusEnvironment", "addSubview"]
+- !private ["PSo18UIFocusEnvironment", "backgroundColor"]
+- !private ["PSo18UIFocusEnvironment", "bounds"]
+- !private ["PSo18UIFocusEnvironment", "contentSize"]
+- ["PSo18UIFocusEnvironment", "didReceiveMemoryWarning"]
+- ["PSo18UIFocusEnvironment", "imageView"]
+- ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "scrollView"]
+- !private ["PSo18UIFocusEnvironment", "view"]
+- ["PSo18UIFocusEnvironment", "viewDidLoad"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["CSo7UIImage", "init"]
+- !private ["CSo11UIImageView", "bounds"]
+- !private ["CSo11UIImageView", "init"]
+- !private ["CSo11UIResponder", "UIColor"]
+- !private ["CSo11UIResponder", "UIImage"]
+- ["CSo11UIResponder", "UIImageView"]
+- ["CSo11UIResponder", "UIScrollView"]
+- !private ["CSo11UIResponder", "addSubview"]
+- !private ["CSo11UIResponder", "backgroundColor"]
+- !private ["CSo11UIResponder", "bounds"]
+- !private ["CSo11UIResponder", "contentSize"]
+- ["CSo11UIResponder", "didReceiveMemoryWarning"]
+- ["CSo11UIResponder", "imageView"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "scrollView"]
+- !private ["CSo11UIResponder", "view"]
+- ["CSo11UIResponder", "viewDidLoad"]
+- !private ["CSo12UIScrollView", "addSubview"]
+- !private ["CSo12UIScrollView", "backgroundColor"]
+- !private ["CSo12UIScrollView", "contentSize"]
+- !private ["CSo12UIScrollView", "init"]
+- !private ["PSo16UIStateRestoring", "UIColor"]
+- !private ["PSo16UIStateRestoring", "UIImage"]
+- !private ["PSo16UIStateRestoring", "UIImageView"]
+- !private ["PSo16UIStateRestoring", "UIScrollView"]
+- ["PSo16UIStateRestoring", "didReceiveMemoryWarning"]
+- ["PSo16UIStateRestoring", "imageView"]
+- ["PSo16UIStateRestoring", "init"]
+- ["PSo16UIStateRestoring", "scrollView"]
+- !private ["PSo16UIStateRestoring", "view"]
+- ["PSo16UIStateRestoring", "viewDidLoad"]
+- ["PSo16UIStateRestoring", ""]
+- !private ["PSo18UITraitEnvironment", "UIColor"]
+- !private ["PSo18UITraitEnvironment", "UIImage"]
+- !private ["PSo18UITraitEnvironment", "UIImageView"]
+- !private ["PSo18UITraitEnvironment", "UIScrollView"]
+- !private ["PSo18UITraitEnvironment", "addSubview"]
+- !private ["PSo18UITraitEnvironment", "backgroundColor"]
+- !private ["PSo18UITraitEnvironment", "bounds"]
+- !private ["PSo18UITraitEnvironment", "contentSize"]
+- ["PSo18UITraitEnvironment", "didReceiveMemoryWarning"]
+- ["PSo18UITraitEnvironment", "imageView"]
+- ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "scrollView"]
+- !private ["PSo18UITraitEnvironment", "view"]
+- ["PSo18UITraitEnvironment", "viewDidLoad"]
+- ["PSo18UITraitEnvironment", ""]
+- !private ["CSo6UIView", "addSubview"]
+- !private ["CSo6UIView", "backgroundColor"]
+- !private ["CSo6UIView", "bounds"]
+- !private ["CSo6UIView", "contentSize"]
+- !private ["CSo6UIView", "init"]
+- !private ["CSo16UIViewController", "UIColor"]
+- !private ["CSo16UIViewController", "UIImage"]
+- ["CSo16UIViewController", "UIImageView"]
+- ["CSo16UIViewController", "UIScrollView"]
+- ["CSo16UIViewController", "didReceiveMemoryWarning"]
+- ["CSo16UIViewController", "imageView"]
+- ["CSo16UIViewController", "init"]
+- ["CSo16UIViewController", "scrollView"]
+- !private ["CSo16UIViewController", "view"]
+- ["CSo16UIViewController", "viewDidLoad"]
+- ["CSo16UIViewController", ""]
+- !private ["PSs24_ColorLiteralConvertible", "blackColor"]
+- !private ["PSs24_ImageLiteralConvertible", "init"]
+- !private ["PSs12_Reflectable", "addSubview"]
+- !private ["PSs12_Reflectable", "backgroundColor"]
+- !private ["PSs12_Reflectable", "bounds"]
+- !private ["PSs12_Reflectable", "contentSize"]
+- !private ["PSs12_Reflectable", "init"]
+- !private ["PSs12_Reflectable", "size"]
+- !private ["C11MovieViewer18testViewController", "UIColor"]
+- !private ["C11MovieViewer18testViewController", "UIImage"]
+- ["C11MovieViewer18testViewController", "UIImageView"]
+- ["C11MovieViewer18testViewController", "UIScrollView"]
+- ["C11MovieViewer18testViewController", "deinit"]
+- ["C11MovieViewer18testViewController", "didReceiveMemoryWarning"]
+- ["C11MovieViewer18testViewController", "imageView"]
+- ["C11MovieViewer18testViewController", "init"]
+- ["C11MovieViewer18testViewController", "scrollView"]
+- !private ["C11MovieViewer18testViewController", "view"]
+- ["C11MovieViewer18testViewController", "viewDidLoad"]
+depends-nominal:
+- "PSs9AnyObject"
+- !private "VSC6CGRect"
+- "PSs11CVarArgType"
+- "PSs23CustomStringConvertible"
+- "PSs9Equatable"
+- "PSs8Hashable"
+- "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- "PSo26NSExtensionRequestHandling"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- !private "CSo7UIColor"
+- "PSo18UIContentContainer"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- !private "CSo7UIImage"
+- !private "CSo11UIImageView"
+- "CSo11UIResponder"
+- !private "CSo12UIScrollView"
+- "PSo16UIStateRestoring"
+- "PSo18UITraitEnvironment"
+- !private "CSo6UIView"
+- "CSo16UIViewController"
+- !private "PSs24_ColorLiteralConvertible"
+- !private "PSs24_ImageLiteralConvertible"
+- !private "PSs12_Reflectable"
+- "C11MovieViewer18testViewController"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/UIProgressView+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/UIWebView+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/UIRefreshControl+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/UIKit+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/UIImageView+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/UIImage+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/UIButton+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/UIActivityIndicatorView+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworkActivityIndicatorManager.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFImageDownloader.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFAutoPurgingImageCache.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFHTTPSessionManager.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFURLSessionManager.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworkReachabilityManager.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFSecurityPolicy.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFURLResponseSerialization.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFURLRequestSerialization.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworking-umbrella.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/AFNetworking.framework/Modules/module.modulemap"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/MBProgressHUD.framework/Headers/MBProgressHUD.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/MBProgressHUD.framework/Headers/MBProgressHUD-umbrella.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/MBProgressHUD.framework/Modules/module.modulemap"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/Cosmos.framework/Modules/Cosmos.swiftmodule/x86_64.swiftmodule"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/Cosmos.framework/Headers/Cosmos-Swift.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/Cosmos.framework/Headers/Cosmos-umbrella.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphonesimulator/Cosmos.framework/Modules/module.modulemap"
+interface-hash: "c5e73e0a74b030d51714ac0e1998592a"

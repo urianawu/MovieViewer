@@ -1,8 +1,13 @@
 version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
 options: "fe4da7907030ee9991d83bdef2559f95"
-build_time: [507271155, 293832000]
+build_time: [507509240, 403146000]
 inputs:
-  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/MovieViewController.swift": [507252067, 0]
   "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/MovieCell.swift": [506814921, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/CatalogViewController.swift": [507340543, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/SpotlightCell.swift": [507401538, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/SearchViewController.swift": [507504462, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/MovieViewerTabBarController.swift": [507507158, 0]
   "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/AppDelegate.swift": [506704172, 0]
-  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/SearchViewController.swift": [507271155, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/SpotlightViewController.swift": [507503905, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/MovieViewController.swift": [507508841, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/MovieViewer/DetailViewController.swift": [507509240, 0]

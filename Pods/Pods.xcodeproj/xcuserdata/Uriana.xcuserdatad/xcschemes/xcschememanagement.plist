@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ChameleonFramework.xcscheme</key>
+		<key>Cosmos.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,17 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
+		<key>294072CFCEE4BC047BB6AF295F698C89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>608B49B5DDACC601EE8044A1931993F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBC32B3F0EDC62957D06CF78F3C2BBFD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

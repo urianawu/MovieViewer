@@ -10,6 +10,12 @@
 		26B841146FB3BB514754843A /* Pods_MovieViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA23FDD76A659AC2946547D /* Pods_MovieViewer.framework */; };
 		C617B1821C584DB0008B9FB1 /* icons in Resources */ = {isa = PBXBuildFile; fileRef = C617B1801C5846F1008B9FB1 /* icons */; };
 		C617B1861C597D9A008B9FB1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617B1851C597D9A008B9FB1 /* SearchViewController.swift */; };
+		C617B1881C59D52E008B9FB1 /* SpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617B1871C59D52E008B9FB1 /* SpotlightViewController.swift */; };
+		C617B18A1C59D5A4008B9FB1 /* SpotlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617B1891C59D5A4008B9FB1 /* SpotlightCell.swift */; };
+		C617B18C1C5A99CB008B9FB1 /* MovieViewerTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617B18B1C5A99CB008B9FB1 /* MovieViewerTabBarController.swift */; };
+		C617B1901C5AE1FF008B9FB1 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617B18F1C5AE1FF008B9FB1 /* CatalogViewController.swift */; };
+		C617B1921C5BE773008B9FB1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617B1911C5BE773008B9FB1 /* DetailViewController.swift */; };
+		C617B1941C5BECBD008B9FB1 /* test.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C617B1931C5BECBD008B9FB1 /* test.JPG */; };
 		C6A78CA01C512C2C007D3F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A78C9F1C512C2C007D3F19 /* AppDelegate.swift */; };
 		C6A78CA51C512C2C007D3F19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A78CA31C512C2C007D3F19 /* Main.storyboard */; };
 		C6A78CA71C512C2C007D3F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6A78CA61C512C2C007D3F19 /* Assets.xcassets */; };
@@ -33,6 +39,12 @@
 		6DA23FDD76A659AC2946547D /* Pods_MovieViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C617B1801C5846F1008B9FB1 /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icons; sourceTree = "<group>"; };
 		C617B1851C597D9A008B9FB1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C617B1871C59D52E008B9FB1 /* SpotlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotlightViewController.swift; sourceTree = "<group>"; };
+		C617B1891C59D5A4008B9FB1 /* SpotlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotlightCell.swift; sourceTree = "<group>"; };
+		C617B18B1C5A99CB008B9FB1 /* MovieViewerTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewerTabBarController.swift; sourceTree = "<group>"; };
+		C617B18F1C5AE1FF008B9FB1 /* CatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		C617B1911C5BE773008B9FB1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C617B1931C5BECBD008B9FB1 /* test.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.JPG; sourceTree = "<group>"; };
 		C6A78C9C1C512C2C007D3F19 /* MovieViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A78C9F1C512C2C007D3F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6A78CA41C512C2C007D3F19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +115,7 @@
 		C6A78C9E1C512C2C007D3F19 /* MovieViewer */ = {
 			isa = PBXGroup;
 			children = (
+				C617B1931C5BECBD008B9FB1 /* test.JPG */,
 				C617B1801C5846F1008B9FB1 /* icons */,
 				C6A78CC61C52D940007D3F19 /* View Controllers */,
 				C6A78CC31C52D8E8007D3F19 /* Views */,
@@ -119,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				C6A78CC41C52D912007D3F19 /* MovieCell.swift */,
+				C617B1891C59D5A4008B9FB1 /* SpotlightCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -128,6 +142,10 @@
 			children = (
 				C6A78CC11C512FDB007D3F19 /* MovieViewController.swift */,
 				C617B1851C597D9A008B9FB1 /* SearchViewController.swift */,
+				C617B1871C59D52E008B9FB1 /* SpotlightViewController.swift */,
+				C617B18B1C5A99CB008B9FB1 /* MovieViewerTabBarController.swift */,
+				C617B18F1C5AE1FF008B9FB1 /* CatalogViewController.swift */,
+				C617B1911C5BE773008B9FB1 /* DetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -220,6 +238,7 @@
 			files = (
 				C6A78CAA1C512C2C007D3F19 /* LaunchScreen.storyboard in Resources */,
 				C617B1821C584DB0008B9FB1 /* icons in Resources */,
+				C617B1941C5BECBD008B9FB1 /* test.JPG in Resources */,
 				C6A78CA71C512C2C007D3F19 /* Assets.xcassets in Resources */,
 				C6A78CA51C512C2C007D3F19 /* Main.storyboard in Resources */,
 			);
@@ -287,7 +306,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C617B1921C5BE773008B9FB1 /* DetailViewController.swift in Sources */,
+				C617B1901C5AE1FF008B9FB1 /* CatalogViewController.swift in Sources */,
 				C6A78CA01C512C2C007D3F19 /* AppDelegate.swift in Sources */,
+				C617B1881C59D52E008B9FB1 /* SpotlightViewController.swift in Sources */,
+				C617B18C1C5A99CB008B9FB1 /* MovieViewerTabBarController.swift in Sources */,
+				C617B18A1C59D5A4008B9FB1 /* SpotlightCell.swift in Sources */,
 				C6A78CC21C512FDB007D3F19 /* MovieViewController.swift in Sources */,
 				C617B1861C597D9A008B9FB1 /* SearchViewController.swift in Sources */,
 				C6A78CC51C52D912007D3F19 /* MovieCell.swift in Sources */,
@@ -417,6 +441,7 @@
 			baseConfigurationReference = FB688EEFA8823F0900C8EEE7 /* Pods-MovieViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MovieViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MovieViewer;
@@ -429,6 +454,7 @@
 			baseConfigurationReference = 102C6B49EF09F02F85FB7EBC /* Pods-MovieViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MovieViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MovieViewer;

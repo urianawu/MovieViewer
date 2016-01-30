@@ -1,0 +1,18 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "a9a5f8e82d5c9eea38a93629cb33f228"
+build_time: [507405528, 297632000]
+inputs:
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosAccessibility.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosSize.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosDefaultSettings.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosSettings.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosLayerHelper.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/Helpers/CosmosTouchTarget.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosLocalizedRating.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosText.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosTouch.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosLayers.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/StarFillMode.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/StarLayer.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosView.swift": [507400927, 0]
+  "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Cosmos/Cosmos/CosmosRating.swift": [507400927, 0]

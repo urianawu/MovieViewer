@@ -87,6 +87,7 @@ typedef int swift_int3  __attribute__((__ext_vector_type__(3)));
 typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -107,9 +108,46 @@ SWIFT_CLASS("_TtC11MovieViewer11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UILabel;
-@class UIImageView;
+@class UITableView;
+@class NSBundle;
 @class NSCoder;
+
+SWIFT_CLASS("_TtC11MovieViewer21CatalogViewController")
+@interface CatalogViewController : UITableViewController
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * __nonnull)tableView;
+- (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIImageView;
+@class UIView;
+@class UILabel;
+@class CosmosView;
+@class UIScrollView;
+
+SWIFT_CLASS("_TtC11MovieViewer20DetailViewController")
+@interface DetailViewController : UITableViewController
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified releaseLabel;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified overviewLabel;
+@property (nonatomic, readonly, strong) UIImageView * __nonnull titleBGView;
+@property (nonatomic, readonly, strong) UIView * __nonnull titleDesView;
+@property (nonatomic, readonly, strong) UILabel * __nonnull titleLabel;
+@property (nonatomic, readonly, strong) UIImageView * __nonnull posterView;
+@property (nonatomic, readonly, strong) UILabel * __nonnull genreLabel;
+@property (nonatomic, readonly, strong) CosmosView * __nonnull ratingView;
+- (void)viewDidLoad;
+- (void)formatText:(UILabel * __nonnull)label fontSize:(CGFloat)fontSize;
+- (void)didReceiveMemoryWarning;
+- (void)scrollViewDidScroll:(UIScrollView * __nonnull)scrollView;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC11MovieViewer9MovieCell")
 @interface MovieCell : UITableViewCell
@@ -123,10 +161,7 @@ SWIFT_CLASS("_TtC11MovieViewer9MovieCell")
 @end
 
 @class NSDictionary;
-@class UIRefreshControl;
-@class UITableView;
 @class NSIndexPath;
-@class NSBundle;
 
 SWIFT_CLASS("_TtC11MovieViewer19MovieViewController")
 @interface MovieViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -134,9 +169,22 @@ SWIFT_CLASS("_TtC11MovieViewer19MovieViewController")
 @property (nonatomic, copy) NSArray<NSDictionary *> * __nullable movies;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
-- (void)refreshControlAction:(UIRefreshControl * __nonnull)refreshControl;
 - (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)tableView:(UITableView * __nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIRefreshControl;
+
+SWIFT_CLASS("_TtC11MovieViewer27MovieViewerTabBarController")
+@interface MovieViewerTabBarController : UITabBarController
+@property (nonatomic, copy) NSArray<NSDictionary *> * __nullable movies;
+@property (nonatomic, strong) NSDictionary * __nonnull genreList;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)refreshControlAction:(UIRefreshControl * __nonnull)refreshControl;
 - (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -148,16 +196,52 @@ SWIFT_CLASS("_TtC11MovieViewer20SearchViewController")
 @property (nonatomic, weak) IBOutlet UISearchBar * __null_unspecified searchBar;
 @property (nonatomic, weak) IBOutlet UITableView * __null_unspecified tableView;
 @property (nonatomic, copy) NSArray<NSString *> * __nonnull titles;
-@property (nonatomic, copy) NSArray<NSDictionary *> * __nullable movies;
 @property (nonatomic, copy) NSArray<NSString *> * __null_unspecified filteredData;
 - (void)viewDidLoad;
 - (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
 - (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (void)tableView:(UITableView * __nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
 - (void)searchBar:(UISearchBar * __nonnull)searchBar textDidChange:(NSString * __nonnull)searchText;
 - (void)searchBarTextDidBeginEditing:(UISearchBar * __nonnull)searchBar;
 - (void)searchBarCancelButtonClicked:(UISearchBar * __nonnull)searchBar;
 - (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11MovieViewer13SpotlightCell")
+@interface SpotlightCell : UICollectionViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified bgView;
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified posterView;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified title;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified releaseDate;
+@property (nonatomic, weak) IBOutlet CosmosView * __null_unspecified ratingStar;
+- (void)awakeFromNib;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UICollectionView;
+
+SWIFT_CLASS("_TtC11MovieViewer23SpotlightViewController")
+@interface SpotlightViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UICollectionView * __null_unspecified collectionView;
+@property (nonatomic, copy) NSArray<NSDictionary *> * __nullable movies;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface SpotlightViewController (SWIFT_EXTENSION(MovieViewer)) <UICollectionViewDelegate, UIScrollViewDelegate>
+- (void)collectionView:(UICollectionView * __nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+@end
+
+
+@interface SpotlightViewController (SWIFT_EXTENSION(MovieViewer)) <UICollectionViewDataSource>
+- (NSInteger)collectionView:(UICollectionView * __nonnull)collectionView numberOfItemsInSection:(NSInteger)section;
+- (UICollectionViewCell * __nonnull)collectionView:(UICollectionView * __nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * __nonnull)indexPath;
 @end
 
 #pragma clang diagnostic pop

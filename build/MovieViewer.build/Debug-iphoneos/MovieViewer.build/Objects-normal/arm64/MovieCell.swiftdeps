@@ -1,0 +1,239 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MovieCell"
+provides-nominal:
+- "C11MovieViewer9MovieCell"
+provides-member:
+- ["C11MovieViewer9MovieCell", ""]
+provides-dynamic-lookup:
+- "title"
+- "posterView"
+- "awakeFromNib"
+- "overview"
+- "setSelected"
+depends-top-level:
+- "Bool"
+- "UIImageView"
+- "UITableViewCell"
+- "UILabel"
+- "MovieCell"
+depends-member:
+- ["PSs9AnyObject", "awakeFromNib"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "overview"]
+- ["PSs9AnyObject", "posterView"]
+- ["PSs9AnyObject", "setSelected"]
+- ["PSs9AnyObject", "title"]
+- ["PSs9AnyObject", ""]
+- ["PSs11CVarArgType", "awakeFromNib"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "overview"]
+- ["PSs11CVarArgType", "posterView"]
+- ["PSs11CVarArgType", "setSelected"]
+- ["PSs11CVarArgType", "title"]
+- ["PSs11CVarArgType", ""]
+- ["PSs23CustomStringConvertible", "awakeFromNib"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "overview"]
+- ["PSs23CustomStringConvertible", "posterView"]
+- ["PSs23CustomStringConvertible", "setSelected"]
+- ["PSs23CustomStringConvertible", "title"]
+- ["PSs23CustomStringConvertible", ""]
+- ["PSs9Equatable", "awakeFromNib"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "overview"]
+- ["PSs9Equatable", "posterView"]
+- ["PSs9Equatable", "setSelected"]
+- ["PSs9Equatable", "title"]
+- ["PSs9Equatable", ""]
+- ["PSs8Hashable", "awakeFromNib"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "overview"]
+- ["PSs8Hashable", "posterView"]
+- ["PSs8Hashable", "setSelected"]
+- ["PSs8Hashable", "title"]
+- ["PSs8Hashable", ""]
+- ["C11MovieViewer9MovieCell", "Bool"]
+- ["C11MovieViewer9MovieCell", "UIImageView"]
+- ["C11MovieViewer9MovieCell", "UILabel"]
+- ["C11MovieViewer9MovieCell", "awakeFromNib"]
+- ["C11MovieViewer9MovieCell", "deinit"]
+- ["C11MovieViewer9MovieCell", "init"]
+- ["C11MovieViewer9MovieCell", "overview"]
+- ["C11MovieViewer9MovieCell", "posterView"]
+- ["C11MovieViewer9MovieCell", "setSelected"]
+- ["C11MovieViewer9MovieCell", "title"]
+- ["PSo8NSCoding", "awakeFromNib"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "overview"]
+- ["PSo8NSCoding", "posterView"]
+- ["PSo8NSCoding", "setSelected"]
+- ["PSo8NSCoding", "title"]
+- ["PSo8NSCoding", ""]
+- ["CSo8NSObject", "Bool"]
+- ["CSo8NSObject", "UIImageView"]
+- ["CSo8NSObject", "UILabel"]
+- ["CSo8NSObject", "awakeFromNib"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "overview"]
+- ["CSo8NSObject", "posterView"]
+- ["CSo8NSObject", "setSelected"]
+- ["CSo8NSObject", "title"]
+- ["PSo16NSObjectProtocol", "awakeFromNib"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "overview"]
+- ["PSo16NSObjectProtocol", "posterView"]
+- ["PSo16NSObjectProtocol", "setSelected"]
+- ["PSo16NSObjectProtocol", "title"]
+- ["PSo16NSObjectProtocol", ""]
+- ["PSo29UIAccessibilityIdentification", "awakeFromNib"]
+- ["PSo29UIAccessibilityIdentification", "init"]
+- ["PSo29UIAccessibilityIdentification", "overview"]
+- ["PSo29UIAccessibilityIdentification", "posterView"]
+- ["PSo29UIAccessibilityIdentification", "setSelected"]
+- ["PSo29UIAccessibilityIdentification", "title"]
+- ["PSo29UIAccessibilityIdentification", ""]
+- ["PSo12UIAppearance", "awakeFromNib"]
+- ["PSo12UIAppearance", "init"]
+- ["PSo12UIAppearance", "overview"]
+- ["PSo12UIAppearance", "posterView"]
+- ["PSo12UIAppearance", "setSelected"]
+- ["PSo12UIAppearance", "title"]
+- ["PSo12UIAppearance", ""]
+- ["PSo21UIAppearanceContainer", "awakeFromNib"]
+- ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "overview"]
+- ["PSo21UIAppearanceContainer", "posterView"]
+- ["PSo21UIAppearanceContainer", "setSelected"]
+- ["PSo21UIAppearanceContainer", "title"]
+- ["PSo21UIAppearanceContainer", ""]
+- ["PSo17UICoordinateSpace", "awakeFromNib"]
+- ["PSo17UICoordinateSpace", "init"]
+- ["PSo17UICoordinateSpace", "overview"]
+- ["PSo17UICoordinateSpace", "posterView"]
+- ["PSo17UICoordinateSpace", "setSelected"]
+- ["PSo17UICoordinateSpace", "title"]
+- ["PSo17UICoordinateSpace", ""]
+- ["PSo13UIDynamicItem", "awakeFromNib"]
+- ["PSo13UIDynamicItem", "init"]
+- ["PSo13UIDynamicItem", "overview"]
+- ["PSo13UIDynamicItem", "posterView"]
+- ["PSo13UIDynamicItem", "setSelected"]
+- ["PSo13UIDynamicItem", "title"]
+- ["PSo13UIDynamicItem", ""]
+- ["PSo18UIFocusEnvironment", "awakeFromNib"]
+- ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "overview"]
+- ["PSo18UIFocusEnvironment", "posterView"]
+- ["PSo18UIFocusEnvironment", "setSelected"]
+- ["PSo18UIFocusEnvironment", "title"]
+- ["PSo18UIFocusEnvironment", ""]
+- ["PSo27UIGestureRecognizerDelegate", "awakeFromNib"]
+- ["PSo27UIGestureRecognizerDelegate", "init"]
+- ["PSo27UIGestureRecognizerDelegate", "overview"]
+- ["PSo27UIGestureRecognizerDelegate", "posterView"]
+- ["PSo27UIGestureRecognizerDelegate", "setSelected"]
+- ["PSo27UIGestureRecognizerDelegate", "title"]
+- ["PSo27UIGestureRecognizerDelegate", ""]
+- ["CSo11UIResponder", "Bool"]
+- ["CSo11UIResponder", "UIImageView"]
+- ["CSo11UIResponder", "UILabel"]
+- ["CSo11UIResponder", "awakeFromNib"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "overview"]
+- ["CSo11UIResponder", "posterView"]
+- ["CSo11UIResponder", "setSelected"]
+- ["CSo11UIResponder", "title"]
+- ["CSo15UITableViewCell", "Bool"]
+- ["CSo15UITableViewCell", "UIImageView"]
+- ["CSo15UITableViewCell", "UILabel"]
+- ["CSo15UITableViewCell", "awakeFromNib"]
+- ["CSo15UITableViewCell", "init"]
+- ["CSo15UITableViewCell", "overview"]
+- ["CSo15UITableViewCell", "posterView"]
+- ["CSo15UITableViewCell", "setSelected"]
+- ["CSo15UITableViewCell", "title"]
+- ["CSo15UITableViewCell", ""]
+- ["PSo18UITraitEnvironment", "awakeFromNib"]
+- ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "overview"]
+- ["PSo18UITraitEnvironment", "posterView"]
+- ["PSo18UITraitEnvironment", "setSelected"]
+- ["PSo18UITraitEnvironment", "title"]
+- ["PSo18UITraitEnvironment", ""]
+- ["CSo6UIView", "Bool"]
+- ["CSo6UIView", "UIImageView"]
+- ["CSo6UIView", "UILabel"]
+- ["CSo6UIView", "awakeFromNib"]
+- ["CSo6UIView", "init"]
+- ["CSo6UIView", "overview"]
+- ["CSo6UIView", "posterView"]
+- ["CSo6UIView", "setSelected"]
+- ["CSo6UIView", "title"]
+- ["PSs12_Reflectable", "awakeFromNib"]
+- ["PSs12_Reflectable", "init"]
+- ["PSs12_Reflectable", "overview"]
+- ["PSs12_Reflectable", "posterView"]
+- ["PSs12_Reflectable", "setSelected"]
+- ["PSs12_Reflectable", "title"]
+- ["PSs12_Reflectable", ""]
+depends-nominal:
+- "PSs9AnyObject"
+- "PSs11CVarArgType"
+- "PSs23CustomStringConvertible"
+- "PSs9Equatable"
+- "PSs8Hashable"
+- "C11MovieViewer9MovieCell"
+- "PSo8NSCoding"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo29UIAccessibilityIdentification"
+- "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- "PSo17UICoordinateSpace"
+- "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- "PSo27UIGestureRecognizerDelegate"
+- "CSo11UIResponder"
+- "CSo15UITableViewCell"
+- "PSo18UITraitEnvironment"
+- "CSo6UIView"
+- "PSs12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/UIProgressView+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/UIWebView+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/UIRefreshControl+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/UIKit+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/UIImageView+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/UIImage+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/UIButton+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/UIActivityIndicatorView+AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworkActivityIndicatorManager.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFImageDownloader.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFAutoPurgingImageCache.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFHTTPSessionManager.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFURLSessionManager.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworkReachabilityManager.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFSecurityPolicy.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFURLResponseSerialization.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFURLRequestSerialization.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworking.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworking-umbrella.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/AFNetworking.framework/Modules/module.modulemap"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/MBProgressHUD.framework/Headers/MBProgressHUD.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/MBProgressHUD.framework/Headers/MBProgressHUD-umbrella.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/MBProgressHUD.framework/Modules/module.modulemap"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/Cosmos.framework/Modules/Cosmos.swiftmodule/arm64.swiftmodule"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/Cosmos.framework/Headers/Cosmos-Swift.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/Cosmos.framework/Headers/Cosmos-umbrella.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Debug-iphoneos/Cosmos.framework/Modules/module.modulemap"
+interface-hash: "9455a4cc9aad668f566ab1e5eb4fcc91"

@@ -1,0 +1,10 @@
+framework module StarryStars {
+  umbrella header "StarryStars-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module StarryStars.__Swift {
+    exclude header "StarryStars-Swift.h"
+}

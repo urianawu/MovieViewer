@@ -1,0 +1,110 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "CosmosTouch"
+provides-nominal:
+- "V6Cosmos11CosmosTouch"
+provides-member:
+- ["V6Cosmos11CosmosTouch", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "max"
+- "CosmosTouch"
+- !private "/"
+- !private "CosmosRating"
+- "CGFloat"
+- !private "*"
+- "CosmosSettings"
+- !private "+="
+- "Double"
+- !private "!="
+depends-member:
+- !private ["PSs16AbsoluteValuable", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- !private ["PSs11CVarArgType", "init"]
+- !private ["PSs10Comparable", "init"]
+- !private ["V6Cosmos12CosmosRating", "displayedRatingFromPreciseRating"]
+- !private ["V6Cosmos14CosmosSettings", "fillMode"]
+- !private ["V6Cosmos14CosmosSettings", "minTouchRating"]
+- !private ["V6Cosmos14CosmosSettings", "totalStars"]
+- ["V6Cosmos11CosmosTouch", "CGFloat"]
+- !private ["V6Cosmos11CosmosTouch", "CosmosRating"]
+- ["V6Cosmos11CosmosTouch", "CosmosSettings"]
+- ["V6Cosmos11CosmosTouch", "Double"]
+- ["V6Cosmos11CosmosTouch", "init"]
+- !private ["V6Cosmos11CosmosTouch", "max"]
+- ["V6Cosmos11CosmosTouch", "touchRating"]
+- !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs23CustomStringConvertible", "init"]
+- !private ["Sd", "init"]
+- !private ["PSs9Equatable", "Precise"]
+- !private ["PSs9Equatable", "RawValue"]
+- !private ["PSs9Equatable", "_getBuiltinLogicValue"]
+- !private ["PSs9Equatable", "init"]
+- !private ["PSs23FloatLiteralConvertible", "init"]
+- !private ["PSs17FloatingPointType", "init"]
+- !private ["PSs8Hashable", "Precise"]
+- !private ["PSs8Hashable", "RawValue"]
+- !private ["PSs8Hashable", "_getBuiltinLogicValue"]
+- !private ["PSs8Hashable", "init"]
+- !private ["PSs25IntegerLiteralConvertible", "init"]
+- !private ["PSs16RawRepresentable", "Precise"]
+- !private ["PSs16RawRepresentable", "RawValue"]
+- !private ["PSs16SignedNumberType", "init"]
+- !private ["O6Cosmos12StarFillMode", "Precise"]
+- !private ["O6Cosmos12StarFillMode", "RawValue"]
+- !private ["O6Cosmos12StarFillMode", "deinit"]
+- !private ["PSs10Strideable", "init"]
+- !private ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs31_BuiltinFloatLiteralConvertible", "init"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "init"]
+- !private ["PSs19_CVarArgAlignedType", "init"]
+- !private ["PSs22_CVarArgPassedAsDouble", "init"]
+- !private ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "init"]
+- !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["PSs12_Reflectable", "init"]
+- !private ["PSs11_Strideable", "init"]
+depends-nominal:
+- !private "PSs16AbsoluteValuable"
+- !private "Sb"
+- !private "PSs25BooleanLiteralConvertible"
+- !private "PSs11BooleanType"
+- !private "PSs11CVarArgType"
+- !private "PSs10Comparable"
+- !private "V6Cosmos12CosmosRating"
+- !private "V6Cosmos14CosmosSettings"
+- "V6Cosmos11CosmosTouch"
+- !private "PSs23CustomStringConvertible"
+- !private "Sd"
+- !private "PSs9Equatable"
+- !private "PSs23FloatLiteralConvertible"
+- !private "PSs17FloatingPointType"
+- !private "PSs8Hashable"
+- !private "PSs25IntegerLiteralConvertible"
+- !private "PSs16RawRepresentable"
+- !private "PSs16SignedNumberType"
+- !private "O6Cosmos12StarFillMode"
+- !private "PSs10Strideable"
+- !private "PSs33_BuiltinBooleanLiteralConvertible"
+- !private "PSs31_BuiltinFloatLiteralConvertible"
+- !private "PSs33_BuiltinIntegerLiteralConvertible"
+- !private "PSs19_CVarArgAlignedType"
+- !private "PSs22_CVarArgPassedAsDouble"
+- !private "PSs21_ObjectiveCBridgeable"
+- !private "PSs12_Reflectable"
+- !private "PSs11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Users/Uriana/Projects/iOS/MovieViewer/Pods/Target Support Files/Cosmos/Cosmos-umbrella.h"
+- "/Users/Uriana/Projects/iOS/MovieViewer/build/Pods.build/Debug-iphoneos/Cosmos.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+interface-hash: "e2430c15a1e035ebb2b3c686c53cdfee"
