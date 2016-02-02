@@ -14,6 +14,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    var movies:[NSDictionary]!
     var titles: [String] = []
     var filteredData: [String]!
     
@@ -23,14 +24,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         searchBar.delegate = self
         if let tbc = self.tabBarController as? MovieViewerTabBarController {
-            if let movies = tbc.movies {
-                for movie in movies{
-                    let title = movie["title"] as! String
-                    self.titles.append(title)
-                }
-                
-            }else {
-                print("no movies available")
+            movies = tbc.movies
+            for movie in movies {
+                let title = movie["title"] as! String
+                self.titles.append(title)
             }
             
             self.filteredData = self.titles
@@ -53,11 +50,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(indexPath.row, forKey: "movieIndex")
-        defaults.synchronize()
-    }
     
     // This method updates filteredData based on the text in the Search Box
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -95,4 +87,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchBar.resignFirstResponder()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let cell = sender as? UITableViewCell {
+            let indexPath = tableView.indexPathForCell(cell)
+            let detailViewController = segue.destinationViewController as! DetailViewController
+
+            let movie = movies[(indexPath?.row)!]
+            detailViewController.movie = movie
+        }
+        
+    }
 }

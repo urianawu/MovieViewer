@@ -8,6 +8,8 @@ class DetailViewController: UITableViewController {
     @IBOutlet weak var releaseLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     
+    var movie: NSDictionary!
+    
     let titleBGView: UIImageView = UIImageView()
     let titleDesView: UIView = UIView()
     let titleLabel : UILabel = UILabel()
@@ -19,14 +21,9 @@ class DetailViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let movieIndex = defaults.integerForKey("movieIndex")
-        var movie : NSDictionary = NSDictionary()
         var genre = ""
         
         if let tbc = self.tabBarController as? MovieViewerTabBarController {
-            let movies = tbc.movies
-            movie = movies![movieIndex]
             let genres = tbc.genreList
             let genreIds = movie["genre_ids"] as! NSArray
             for id in genreIds {

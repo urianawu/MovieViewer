@@ -15,7 +15,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    var movies:[NSDictionary]?
+    var movies:[NSDictionary]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,19 +71,22 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(indexPath.row, forKey: "movieIndex")
-        defaults.synchronize()
-    }
-    /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let detailViewController = segue.destinationViewController as! DetailViewController
+
+        let movie = movies[(indexPath?.row)!]
+        detailViewController.movie = movie
     }
-    */
+    
+
+
+    
     
 }

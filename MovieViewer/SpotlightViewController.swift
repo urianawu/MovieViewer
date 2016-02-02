@@ -19,7 +19,7 @@ class SpotlightViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
-        collectionView.delegate = self
+        //collectionView.delegate = self
 
         // Do any additional setup after loading the view.
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
@@ -71,15 +71,24 @@ class SpotlightViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let cell = sender as? UICollectionViewCell {
+        let indexPath = collectionView.indexPathForCell(cell)
+        let detailViewController = segue.destinationViewController as! DetailViewController
+        
+        let movie = movies![(indexPath?.row)!]
+        detailViewController.movie = movie
+        }
+        
     }
-    */
+
 
 }
 
@@ -135,11 +144,4 @@ extension SpotlightViewController: UICollectionViewDataSource {
     
 }
 
-extension SpotlightViewController: UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(indexPath.row, forKey: "movieIndex")
-        defaults.synchronize()
-    }
-}
 

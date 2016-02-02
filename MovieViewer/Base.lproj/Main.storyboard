@@ -180,7 +180,7 @@
                                                     <rect key="frame" x="93" y="8" width="214" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DAz-pv-7Pj">
@@ -191,7 +191,7 @@
                                                     <rect key="frame" x="93" y="29" width="200" height="81.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -247,7 +247,7 @@
                                                     <rect key="frame" x="15" y="11" width="289" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -264,7 +264,7 @@
                                                     <rect key="frame" x="15" y="8" width="291" height="180"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -331,7 +331,7 @@
                                                                         <rect key="frame" x="8" y="159" width="97" height="18"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bSd-UQ-yEC" userLabel="detailBtn">
@@ -381,11 +381,11 @@
             </objects>
             <point key="canvasLocation" x="3545" y="241"/>
         </scene>
-        <!--SettingsNav-->
+        <!--TopRatedNav-->
         <scene sceneID="0Av-b0-77C">
             <objects>
-                <navigationController title="SettingsNav" id="hH1-WA-seW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="icons/settings.png" id="k5x-sE-X4s"/>
+                <navigationController title="SettingsNav" id="hH1-WA-seW" userLabel="TopRatedNav" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="k5x-sE-X4s" userLabel="TopRated"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="knR-d9-jH4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -400,10 +400,10 @@
             </objects>
             <point key="canvasLocation" x="2905" y="1925"/>
         </scene>
-        <!--Settings-->
+        <!--TopRated-->
         <scene sceneID="6pw-tn-uIV">
             <objects>
-                <tableViewController title="Settings" id="fkK-tM-fWb" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="fkK-tM-fWb" userLabel="TopRated" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fUt-6y-wWE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -443,8 +443,8 @@
                             <outlet property="delegate" destination="fkK-tM-fWb" id="O63-bM-plW"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Settings" id="Mzs-Fe-Uee" userLabel="SettingsTab"/>
-                    <navigationItem key="navigationItem" title="Settings" id="LLt-xI-iBc"/>
+                    <tabBarItem key="tabBarItem" title="Top Rated" id="Mzs-Fe-Uee" userLabel="TopRatedTab"/>
+                    <navigationItem key="navigationItem" title="Top Rated" id="LLt-xI-iBc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVt-gH-gr4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -454,7 +454,7 @@
         <scene sceneID="LE0-YL-epm">
             <objects>
                 <navigationController title="SpotlightNav" automaticallyAdjustsScrollViewInsets="NO" id="aMo-5P-AvU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="7G5-G6-53p"/>
+                    <tabBarItem key="tabBarItem" title="Featured" image="icons/Hearts.png" id="7G5-G6-53p"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="j92-iX-7gg">
@@ -529,9 +529,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="aMo-5P-AvU" kind="relationship" relationship="viewControllers" id="Lbf-hS-q95"/>
+                        <segue destination="hH1-WA-seW" kind="relationship" relationship="viewControllers" id="UpV-iW-7oC"/>
                         <segue destination="sJh-xQ-E45" kind="relationship" relationship="viewControllers" id="exL-KX-gaD"/>
                         <segue destination="kRv-pl-oGf" kind="relationship" relationship="viewControllers" id="9ti-d2-LI9"/>
-                        <segue destination="hH1-WA-seW" kind="relationship" relationship="viewControllers" id="UpV-iW-7oC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0H-X2-Cbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -540,12 +540,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons/Hearts.png" width="16" height="16"/>
         <image name="icons/list.png" width="16" height="16"/>
         <image name="icons/movie.png" width="16" height="16"/>
-        <image name="icons/settings.png" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4o6-gh-J7D"/>
-        <segue reference="m8K-VZ-K39"/>
+        <segue reference="FRO-uO-uAV"/>
+        <segue reference="qcf-Lz-0Ey"/>
     </inferredMetricsTieBreakers>
 </document>
