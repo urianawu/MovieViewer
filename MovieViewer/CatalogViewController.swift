@@ -8,11 +8,21 @@
 
 import UIKit
 
-class CatalogViewController: UITableViewController {
+class CatalogViewController: UICollectionViewController {
 
+    var genreList = NSDictionary()
+    var genreNameList = [String]()
+    var genreIDList = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let tbc = self.tabBarController as? MovieViewerTabBarController {
+            genreList = tbc.genreList
+        }
+        for (id, name) in genreList {
+            genreIDList.append(Int(id as! NSNumber))
+            genreNameList.append(name as! String)
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,28 +35,57 @@ class CatalogViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func collectionView(collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+            //1
+            switch kind {
+                //2
+            case UICollectionElementKindSectionHeader:
+                //3
+                let headerView =
+                collectionView.dequeueReusableSupplementaryViewOfKind(kind,
+                    withReuseIdentifier: "GenreHeader",
+                    forIndexPath: indexPath)
+                    as! GenreHeaderView
+                headerView.genre.text = self.genreNameList[indexPath.section]
+                return headerView
+            default:
+                //4
+                assert(false, "Unexpected element kind")
+            }
+    }
+    
     // MARK: - Table view data source
-
+/*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return genreList.count
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        headerView.backgroundColor = UIColor(white: 0, alpha: 0.9)
+        
+        let userNameLabel = UILabel(frame: CGRect(x: 50, y: 10, width: 300, height: 30))
+        userNameLabel.clipsToBounds = true
+        userNameLabel.text = genreNameList[section]
+        userNameLabel.textColor = UIColor(white: 1, alpha: 0.8)
+        userNameLabel.font = UIFont.boldSystemFontOfSize(12)
+        headerView.addSubview(userNameLabel)
+        
+        return headerView
     }
-
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("GenreCell", forIndexPath: indexPath) as! GenreCell
 
         // Configure the cell...
-
+        cell.genreCollection
+        
         return cell
     }
-    */
-
+    
+*/
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -92,4 +131,20 @@ class CatalogViewController: UITableViewController {
     }
     */
 
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return genreNameList.count
+    }
+    
+    //2
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return genreIDList.count
+    }
+    
+    //3
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GenreMovieCell", forIndexPath: indexPath) as! GenreMovieCell
+        cell.backgroundColor = UIColor.whiteColor()
+        // Configure the cell
+        return cell
+    }
 }

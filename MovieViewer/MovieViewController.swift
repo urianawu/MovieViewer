@@ -15,7 +15,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    var movies:[NSDictionary]!
+    var movies = [NSDictionary]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         let refreshControl = UIRefreshControl()
 
         if let tbc = self.tabBarController as? MovieViewerTabBarController {
-            movies = tbc.movies
+            movies = tbc.movies!
 
         // init refresh
             refreshControl.addTarget(tbc, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
@@ -44,19 +44,14 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if let movies = movies {
-            return movies.count
-            
-        }else {
-            return 0
-        }
+        return movies.count
+
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
         
-        let movie = movies![indexPath.row]
+        let movie = movies[indexPath.row]
         let title = movie["title"] as! String
         let overview = movie["overview"] as! String
         let posterPath = movie["poster_path"] as! String

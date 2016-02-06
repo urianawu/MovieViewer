@@ -14,7 +14,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var movies:[NSDictionary]!
+    var movies = [NSDictionary]()
     var titles: [String] = []
     var filteredData: [String]!
     
@@ -24,7 +24,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         searchBar.delegate = self
         if let tbc = self.tabBarController as? MovieViewerTabBarController {
-            movies = tbc.movies
+            movies = tbc.movies!
             for movie in movies {
                 let title = movie["title"] as! String
                 self.titles.append(title)

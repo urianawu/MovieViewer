@@ -14,12 +14,11 @@ class SpotlightViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var movies:[NSDictionary]?
+    var movies = [NSDictionary]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
-        //collectionView.delegate = self
 
         // Do any additional setup after loading the view.
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
@@ -83,7 +82,7 @@ class SpotlightViewController: UIViewController {
         let indexPath = collectionView.indexPathForCell(cell)
         let detailViewController = segue.destinationViewController as! DetailViewController
         
-        let movie = movies![(indexPath?.row)!]
+        let movie = movies[(indexPath?.row)!]
         detailViewController.movie = movie
         }
         
@@ -94,18 +93,15 @@ class SpotlightViewController: UIViewController {
 
 extension SpotlightViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let movies = movies {
-            return movies.count
-        }else {
-            return 0
-        }
+        return movies.count
+
     }
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("SpotlightCell", forIndexPath: indexPath) as! SpotlightCell
         
-        let movie = movies![indexPath.row]
+        let movie = movies[indexPath.row]
         let title = movie["title"] as! String
         var posterURL : NSURL
         if let posterPath = movie["poster_path"] as? String {
@@ -130,14 +126,43 @@ extension SpotlightViewController: UICollectionViewDataSource {
             cell.bgView.setImageWithURL(posterURL)
         }
         
-        
-        
         cell.title.text = title.uppercaseString
         cell.releaseDate.text = "Released On "+(movie["release_date"] as? String)!
         let rating = movie["vote_average"] as? Double
         cell.ratingStar.rating = rating!/2
         let voter = movie["vote_count"] as? Int
         cell.ratingStar.text = "("+String(voter!)+")"
+        
+        
+        //animation
+        
+        cell.transform.ty = CGFloat(arc4random_uniform(UInt32(cell.frame.size.height))+1)
+        cell.alpha = 0
+        cell.title.transform.ty = 120
+        cell.releaseDate.transform.ty = 120
+        cell.ratingStar.transform.ty = 120
+        
+        UIView.animateWithDuration(0.6, animations: {
+            // This causes first view to fade in and second view to fade out
+            cell.transform.ty = 0
+            cell.alpha = 1
+            
+        })
+        
+        UIView.animateWithDuration(0.4,
+            delay: 0.8,
+            options: [],
+            animations: {
+            // This causes first view to fade in and second view to fade out
+            cell.title.transform.ty = 0
+            cell.releaseDate.transform.ty = 0
+            cell.ratingStar.transform.ty = 0
+            }, completion: { finished in
+
+        })
+        
+
+        
         return cell
         
     }

@@ -22,6 +22,7 @@ class SpotlightCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    
         //add gradient mask
         let mGradient_up = CAGradientLayer()
         mGradient_up.frame = bgView.bounds
@@ -45,8 +46,6 @@ class SpotlightCell: UICollectionViewCell {
         mGradient_down.endPoint = CGPointMake(0, 1)
         mGradient_down.colors = colors
         bgView.layer.addSublayer(mGradient_down)
-        
-        
         
     }
     
