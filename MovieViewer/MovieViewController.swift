@@ -68,7 +68,8 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.posterView.setImageWithURL(imageUrl!)
         cell.title.text = title
         cell.overview.text = overview
-        
+        cell.selectionStyle = .None
+
         return cell
     }
     

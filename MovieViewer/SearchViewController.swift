@@ -39,6 +39,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TableCell")! as UITableViewCell
         cell.textLabel?.text = filteredData[indexPath.row]
+        cell.selectionStyle = .None
+
         return cell
     }
     
