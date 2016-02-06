@@ -7,22 +7,52 @@
 //
 
 import UIKit
-
-class CatalogViewController: UICollectionViewController {
+import AFNetworking
+import MBProgressHUD
+class CatalogViewController: UITableViewController {
 
     var genreList = NSDictionary()
     var genreNameList = [String]()
-    var genreIDList = [Int]()
+    var genreMovies = [[NSDictionary]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let tbc = self.tabBarController as? MovieViewerTabBarController {
             genreList = tbc.genreList
         }
+
         for (id, name) in genreList {
-            genreIDList.append(Int(id as! NSNumber))
-            genreNameList.append(name as! String)
+
+            //get current genre movies
+            let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+            let url = NSURL(string: "http://api.themoviedb.org/3/genre/"+String(id)+"/movies?api_key=\(apiKey)")
+            let request = NSURLRequest(URL: url!)
+            // Configure session so that completion handler is executed on main UI thread
+            let session = NSURLSession(
+                configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+                delegate:nil,
+                delegateQueue:NSOperationQueue.mainQueue()
+            )
+
+            let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
+                completionHandler: { (dataOrNil, response, error) in
+                    
+                    // ... Use the new data to update the data source ...
+                    if let data = dataOrNil {
+                        if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
+                            data, options:[]) as? NSDictionary {
+                                    self.genreNameList.append(name as! String)
+
+                                self.genreMovies.append((responseDictionary["results"] as? [NSDictionary])!)
+                                self.tableView.reloadData()
+                        }
+                    }
+            })
+            task.resume()
+
         }
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -35,57 +65,44 @@ class CatalogViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func collectionView(collectionView: UICollectionView,
-        viewForSupplementaryElementOfKind kind: String,
-        atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-            //1
-            switch kind {
-                //2
-            case UICollectionElementKindSectionHeader:
-                //3
-                let headerView =
-                collectionView.dequeueReusableSupplementaryViewOfKind(kind,
-                    withReuseIdentifier: "GenreHeader",
-                    forIndexPath: indexPath)
-                    as! GenreHeaderView
-                headerView.genre.text = self.genreNameList[indexPath.section]
-                return headerView
-            default:
-                //4
-                assert(false, "Unexpected element kind")
-            }
+    // MARK: - Table view data source
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return genreMovies.count
     }
     
-    // MARK: - Table view data source
-/*
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return genreList.count
+    override func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return 1
     }
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 80))
         headerView.backgroundColor = UIColor(white: 0, alpha: 0.9)
         
-        let userNameLabel = UILabel(frame: CGRect(x: 50, y: 10, width: 300, height: 30))
+        let userNameLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 300, height: 30))
         userNameLabel.clipsToBounds = true
         userNameLabel.text = genreNameList[section]
-        userNameLabel.textColor = UIColor(white: 1, alpha: 0.8)
+        userNameLabel.textColor = UIColor(red: 220/255, green: 255/255, blue: 201/255, alpha: 0.8)
         userNameLabel.font = UIFont.boldSystemFontOfSize(12)
         headerView.addSubview(userNameLabel)
         
         return headerView
     }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("GenreCell", forIndexPath: indexPath) as! GenreCell
-
-        // Configure the cell...
-        cell.genreCollection
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("GenreTableViewCell", forIndexPath: indexPath)
         return cell
     }
     
-*/
+    override func tableView(tableView: UITableView,
+        willDisplayCell cell: UITableViewCell,
+        forRowAtIndexPath indexPath: NSIndexPath) {
+            guard let tableViewCell = cell as? GenreTableViewCell else { return }
+            
+            tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.section)
+    }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -131,20 +148,42 @@ class CatalogViewController: UICollectionViewController {
     }
     */
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return genreNameList.count
+}
+
+extension CatalogViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
+            return genreMovies[collectionView.tag].count
     }
     
-    //2
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return genreIDList.count
-    }
-    
-    //3
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GenreMovieCell", forIndexPath: indexPath) as! GenreMovieCell
-        cell.backgroundColor = UIColor.whiteColor()
-        // Configure the cell
-        return cell
+    func collectionView(collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GenreMovieCell",
+                forIndexPath: indexPath) as! GenreMovieCell
+            //cell.backgroundColor = genreMovies[collectionView.tag][indexPath.item]
+            let movie = genreMovies[collectionView.tag][indexPath.row]
+            if let posterPath = movie["poster_path"] as? String {
+                let posterBaseUrl = "http://image.tmdb.org/t/p/w500"
+                let posterUrl = NSURL(string: posterBaseUrl + posterPath)
+                cell.posterView.setImageWithURL(posterUrl!)
+            }
+            
+            cell.title.text = movie["title"] as? String
+
+            //animation
+            cell.posterView.transform.tx = 100
+            cell.posterView.alpha = 0
+            cell.title.alpha = 0
+            
+            UIView.animateWithDuration(0.6, animations: {
+                // This causes first view to fade in and second view to fade out
+                cell.posterView.transform.tx = 0
+                cell.posterView.alpha = 1
+                cell.title.alpha = 1
+                
+            })
+            
+            return cell
     }
 }

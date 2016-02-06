@@ -21,6 +21,9 @@ class DetailViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         
+        let rightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("likedSelector"))
+        self.navigationItem.rightBarButtonItem = rightButton
+        
         var genre = ""
         
         if let tbc = self.tabBarController as? MovieViewerTabBarController {
@@ -141,6 +144,12 @@ class DetailViewController: UITableViewController {
             imgRect.size.height = kHeaderHeight+yPos
             self.titleBGView.frame = imgRect
             self.titleDesView.alpha = 1 - ((yPos-64)/80)
+        }
+    }
+    
+    func likedSelector() {
+        if let tbc = self.tabBarController as? MovieViewerTabBarController {
+            tbc.likedMovies.append(movie)
         }
     }
 }

@@ -12,6 +12,7 @@ import MBProgressHUD
 class MovieViewerTabBarController: UITabBarController {
     var movies: [NSDictionary]?
     var genreList: NSDictionary = NSDictionary()
+    var likedMovies = [NSDictionary]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

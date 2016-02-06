@@ -27,12 +27,11 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         let refreshControl = UIRefreshControl()
 
         if let tbc = self.tabBarController as? MovieViewerTabBarController {
-            movies = tbc.movies!
-
-        // init refresh
-            refreshControl.addTarget(tbc, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+            movies = tbc.likedMovies
         }
-        
+        // init refresh
+            refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.reloadData()
         tableView.insertSubview(refreshControl, atIndex: 0)
     }
     
@@ -42,6 +41,13 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    func refreshControlAction(refreshControl: UIRefreshControl) {
+        if let tbc = self.tabBarController as? MovieViewerTabBarController {
+            movies = tbc.likedMovies
+        }
+        tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count

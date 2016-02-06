@@ -135,17 +135,17 @@ extension SpotlightViewController: UICollectionViewDataSource {
         
         
         //animation
-        
-        cell.transform.ty = CGFloat(arc4random_uniform(UInt32(cell.frame.size.height))+1)
-        cell.alpha = 0
+        cell.posterView.alpha = 0
+        cell.bgView.transform.ty = CGFloat(arc4random_uniform(UInt32(cell.frame.size.height))+1)
+        cell.bgView.alpha = 0
         cell.title.transform.ty = 120
         cell.releaseDate.transform.ty = 120
         cell.ratingStar.transform.ty = 120
         
         UIView.animateWithDuration(0.6, animations: {
             // This causes first view to fade in and second view to fade out
-            cell.transform.ty = 0
-            cell.alpha = 1
+            cell.bgView.transform.ty = 0
+            cell.bgView.alpha = 1
             
         })
         
@@ -154,9 +154,11 @@ extension SpotlightViewController: UICollectionViewDataSource {
             options: [],
             animations: {
             // This causes first view to fade in and second view to fade out
-            cell.title.transform.ty = 0
-            cell.releaseDate.transform.ty = 0
-            cell.ratingStar.transform.ty = 0
+                cell.title.transform.ty = 0
+                cell.releaseDate.transform.ty = 0
+                cell.ratingStar.transform.ty = 0
+                cell.posterView.alpha = 1
+
             }, completion: { finished in
 
         })
