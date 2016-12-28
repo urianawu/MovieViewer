@@ -26,22 +26,22 @@ class CatalogViewController: UITableViewController {
 
             //get current genre movies
             let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-            let url = NSURL(string: "http://api.themoviedb.org/3/genre/"+String(id)+"/movies?api_key=\(apiKey)")
-            let request = NSURLRequest(URL: url!)
+            let url = URL(string: "http://api.themoviedb.org/3/genre/"+String(describing: id)+"/movies?api_key=\(apiKey)")
+            let request = URLRequest(url: url!)
             // Configure session so that completion handler is executed on main UI thread
-            let session = NSURLSession(
-                configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+            let session = URLSession(
+                configuration: URLSessionConfiguration.default,
                 delegate:nil,
-                delegateQueue:NSOperationQueue.mainQueue()
+                delegateQueue:OperationQueue.main
             )
 
-            let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
+            let task : URLSessionDataTask = session.dataTask(with: request,
                 completionHandler: { (dataOrNil, response, error) in
                     
                     // ... Use the new data to update the data source ...
                     if let data = dataOrNil {
-                        if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
-                            data, options:[]) as? NSDictionary {
+                        if let responseDictionary = try! JSONSerialization.jsonObject(
+                            with: data, options:[]) as? NSDictionary {
                                     self.genreNameList.append(name as! String)
 
                                 self.genreMovies.append((responseDictionary["results"] as? [NSDictionary])!)
@@ -67,16 +67,18 @@ class CatalogViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return genreMovies.count
     }
     
-    override func tableView(tableView: UITableView,
+    override func tableView(_ tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return 1
     }
-
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 80))
         headerView.backgroundColor = UIColor(white: 0, alpha: 0.9)
         
@@ -84,25 +86,25 @@ class CatalogViewController: UITableViewController {
         userNameLabel.clipsToBounds = true
         userNameLabel.text = genreNameList[section]
         userNameLabel.textColor = UIColor(red: 220/255, green: 255/255, blue: 201/255, alpha: 0.8)
-        userNameLabel.font = UIFont.boldSystemFontOfSize(12)
+        userNameLabel.font = UIFont.boldSystemFont(ofSize: 12)
         headerView.addSubview(userNameLabel)
         
         return headerView
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("GenreTableViewCell", forIndexPath: indexPath)
-        cell.selectionStyle = .None
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GenreTableViewCell", for: indexPath)
+        cell.selectionStyle = .none
 
         return cell
     }
     
-    override func tableView(tableView: UITableView,
-        willDisplayCell cell: UITableViewCell,
-        forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView,
+        willDisplay cell: UITableViewCell,
+        forRowAt indexPath: IndexPath) {
             guard let tableViewCell = cell as? GenreTableViewCell else { return }
             
-            tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.section)
+            tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
     }
 
     /*
@@ -153,22 +155,22 @@ class CatalogViewController: UITableViewController {
 }
 
 extension CatalogViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView,
+    func collectionView(_ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
             return genreMovies[collectionView.tag].count
     }
     
-    func collectionView(collectionView: UICollectionView,
-        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GenreMovieCell",
-                forIndexPath: indexPath) as! GenreMovieCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenreMovieCell",
+                for: indexPath) as! GenreMovieCell
             //cell.backgroundColor = genreMovies[collectionView.tag][indexPath.item]
             let movie = genreMovies[collectionView.tag][indexPath.row]
             if let posterPath = movie["poster_path"] as? String {
                 let posterBaseUrl = "http://image.tmdb.org/t/p/w500"
-                let posterUrl = NSURL(string: posterBaseUrl + posterPath)
-                cell.posterView.setImageWithURL(posterUrl!)
+                let posterUrl = URL(string: posterBaseUrl + posterPath)
+                cell.posterView.setImageWith(posterUrl!)
             }
             
             cell.title.text = movie["title"] as? String
@@ -178,7 +180,7 @@ extension CatalogViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.posterView.alpha = 0
             cell.title.alpha = 0
             
-            UIView.animateWithDuration(0.6, animations: {
+            UIView.animate(withDuration: 0.6, animations: {
                 // This causes first view to fade in and second view to fade out
                 cell.posterView.transform.tx = 0
                 cell.posterView.alpha = 1

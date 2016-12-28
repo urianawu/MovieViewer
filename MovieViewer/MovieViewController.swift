@@ -30,9 +30,9 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
             movies = tbc.likedMovies
         }
         // init refresh
-            refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+            refreshControl.addTarget(self, action: #selector(MovieViewController.refreshControlAction(_:)), for: UIControlEvents.valueChanged)
         tableView.reloadData()
-        tableView.insertSubview(refreshControl, atIndex: 0)
+        tableView.insertSubview(refreshControl, at: 0)
     }
     
     
@@ -41,7 +41,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func refreshControlAction(refreshControl: UIRefreshControl) {
+    func refreshControlAction(_ refreshControl: UIRefreshControl) {
         if let tbc = self.tabBarController as? MovieViewerTabBarController {
             movies = tbc.likedMovies
         }
@@ -49,13 +49,13 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         refreshControl.endRefreshing()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
 
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
@@ -63,12 +63,12 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         let posterPath = movie["poster_path"] as! String
         
         let baseUrl = "http://image.tmdb.org/t/p/w500"
-        let imageUrl = NSURL(string: baseUrl + posterPath)
+        let imageUrl = URL(string: baseUrl + posterPath)
         
-        cell.posterView.setImageWithURL(imageUrl!)
+        cell.posterView.setImageWith(imageUrl!)
         cell.title.text = title
         cell.overview.text = overview
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
 
         return cell
     }
@@ -76,12 +76,12 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
         let cell = sender as! UITableViewCell
-        let indexPath = tableView.indexPathForCell(cell)
-        let detailViewController = segue.destinationViewController as! DetailViewController
+        let indexPath = tableView.indexPath(for: cell)
+        let detailViewController = segue.destination as! DetailViewController
 
         let movie = movies[(indexPath?.row)!]
         detailViewController.movie = movie

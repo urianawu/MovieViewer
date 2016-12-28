@@ -21,7 +21,7 @@ class DetailViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         
-        let rightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("likedSelector"))
+        let rightButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.plain, target: self, action: #selector(DetailViewController.likedSelector))
         self.navigationItem.rightBarButtonItem = rightButton
         
         var genre = ""
@@ -35,15 +35,15 @@ class DetailViewController: UITableViewController {
             }
         }
         
-        var posterURL : NSURL
+        var posterURL : URL
         if let posterPath = movie["poster_path"] as? String {
             let posterBaseUrl = "http://image.tmdb.org/t/p/w500"
-            let posterUrl = NSURL(string: posterBaseUrl + posterPath)
+            let posterUrl = URL(string: posterBaseUrl + posterPath)
             posterURL = posterUrl!
-            posterView.setImageWithURL(posterUrl!)
+            posterView.setImageWith(posterUrl!)
         }
         else {
-            posterURL = NSURL()
+            posterURL = URL(string:"")!
             // No poster image. Can either set to nil (no image) or a default movie poster image
             // that you include as an asset
             posterView.image = nil
@@ -51,43 +51,43 @@ class DetailViewController: UITableViewController {
         
         if let bgPath = movie["backdrop_path"] as? String {
             let BaseUrl = "http://image.tmdb.org/t/p/w500"
-            let bgUrl = NSURL(string: BaseUrl + bgPath)
-            titleBGView.setImageWithURL(bgUrl!)
+            let bgUrl = URL(string: BaseUrl + bgPath)
+            titleBGView.setImageWith(bgUrl!)
         }
         else {
-            titleBGView.setImageWithURL(posterURL)
+            titleBGView.setImageWith(posterURL)
         }
         
         
-        let headerW = CGRectGetWidth(self.view.frame)
+        let headerW = self.view.frame.width
         //title description
         self.titleDesView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-        self.titleDesView.frame = CGRectMake(0, -kHeaderHeight/4, headerW, kHeaderHeight*5/4)
+        self.titleDesView.frame = CGRect(x: 0, y: -kHeaderHeight/4, width: headerW, height: kHeaderHeight*5/4)
         self.titleDesView.clipsToBounds = true
         
         //title label
-        self.titleLabel.frame = CGRectMake(headerW/3, kHeaderHeight/2, headerW/2, kHeaderHeight/3)
-        titleLabel.textColor = UIColor.whiteColor()
+        self.titleLabel.frame = CGRect(x: headerW/3, y: kHeaderHeight/2, width: headerW/2, height: kHeaderHeight/3)
+        titleLabel.textColor = UIColor.white
         titleLabel.text = movie["title"] as? String
         formatText(titleLabel, fontSize: 18)
 
         //poster
         posterView.frame = CGRect(x: headerW/20, y: kHeaderHeight/2, width: headerW/4, height: kHeaderHeight*2/3)
         posterView.clipsToBounds = true
-        posterView.contentMode = UIViewContentMode.ScaleAspectFill
+        posterView.contentMode = UIViewContentMode.scaleAspectFill
 
         //genre
-        self.genreLabel.frame = CGRectMake(headerW/3, kHeaderHeight*3/4, headerW*2/3, kHeaderHeight/4)
+        self.genreLabel.frame = CGRect(x: headerW/3, y: kHeaderHeight*3/4, width: headerW*2/3, height: kHeaderHeight/4)
         genreLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.8)
         genreLabel.text = genre
         formatText(genreLabel, fontSize: 10)
 
         //rating
-        self.ratingView.frame = CGRectMake(headerW/3, kHeaderHeight*7/8, headerW/2, kHeaderHeight/4)
-        ratingView.settings.fillMode = .Precise
+        self.ratingView.frame = CGRect(x: headerW/3, y: kHeaderHeight*7/8, width: headerW/2, height: kHeaderHeight/4)
+        ratingView.settings.fillMode = .precise
 
-        ratingView.settings.colorFilled = lightGreen
-        ratingView.settings.borderColorEmpty = lightGreen
+        ratingView.settings.filledColor = lightGreen
+        ratingView.settings.emptyBorderColor = lightGreen
 
         let rating = movie["vote_average"] as! Double
         ratingView.rating = rating/2
@@ -98,16 +98,16 @@ class DetailViewController: UITableViewController {
         self.titleDesView.addSubview(ratingView)
         
         //title background
-        self.titleBGView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kHeaderHeight)
-        self.titleBGView.contentMode = .ScaleAspectFill
+        self.titleBGView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: kHeaderHeight)
+        self.titleBGView.contentMode = .scaleAspectFill
         self.titleBGView.clipsToBounds = true
         
-        let tableHeaderView = UIView(frame: CGRectMake(0, 0, CGRectGetWidth(self.view.frame), kHeaderHeight));
-        tableHeaderView.backgroundColor = UIColor.purpleColor()
+        let tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: kHeaderHeight));
+        tableHeaderView.backgroundColor = UIColor.purple
         tableHeaderView.addSubview(self.titleBGView)
         tableHeaderView.addSubview(self.titleDesView)
 
-        self.tableView.backgroundColor = UIColor.clearColor()
+        self.tableView.backgroundColor = UIColor.clear
         self.tableView.tableHeaderView = tableHeaderView
         
         let releaseDateBase = "RELEASED ON:"
@@ -121,10 +121,10 @@ class DetailViewController: UITableViewController {
 
     }
     
-    func formatText(label: UILabel, fontSize: CGFloat) {
-        label.textAlignment = NSTextAlignment.Left
-        label.font = UIFont.boldSystemFontOfSize(fontSize)
-        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+    func formatText(_ label: UILabel, fontSize: CGFloat) {
+        label.textAlignment = NSTextAlignment.left
+        label.font = UIFont.boldSystemFont(ofSize: fontSize)
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.numberOfLines = 0
         label.sizeToFit()
     }
@@ -135,7 +135,7 @@ class DetailViewController: UITableViewController {
     
     
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let yPos: CGFloat = -scrollView.contentOffset.y
         
         if (yPos > 0) {

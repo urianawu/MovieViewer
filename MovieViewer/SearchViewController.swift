@@ -36,15 +36,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TableCell")! as UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell")! as UITableViewCell
         cell.textLabel?.text = filteredData[indexPath.row]
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
 
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let filteredData = filteredData {
             return filteredData.count
         }else {
@@ -54,7 +54,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     // This method updates filteredData based on the text in the Search Box
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // When there is no text, filteredData is the same as the original data
         if searchText.isEmpty {
             filteredData = titles
@@ -65,7 +65,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             // item should NOT be included
             filteredData = titles.filter({(dataItem: String) -> Bool in
                 // If dataItem matches the searchText, return true to include it
-                if dataItem.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil {
+                if dataItem.range(of: searchText, options: .caseInsensitive) != nil {
                     return true
                 } else {
                     return false
@@ -79,20 +79,20 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.reloadData()
     }
     
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.searchBar.showsCancelButton = true
     }
     
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? UITableViewCell {
-            let indexPath = tableView.indexPathForCell(cell)
-            let detailViewController = segue.destinationViewController as! DetailViewController
+            let indexPath = tableView.indexPath(for: cell)
+            let detailViewController = segue.destination as! DetailViewController
 
             let movie = movies[(indexPath?.row)!]
             detailViewController.movie = movie

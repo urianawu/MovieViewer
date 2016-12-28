@@ -20,24 +20,24 @@ class MovieViewerTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
         //get genre list
-        let genreList_url = NSURL(string: "http://api.themoviedb.org/3/genre/movie/list?api_key=\(apiKey)")
-        let genreList_request = NSURLRequest(
-            URL: genreList_url!,
-            cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
+        let genreList_url = URL(string: "http://api.themoviedb.org/3/genre/movie/list?api_key=\(apiKey)")
+        let genreList_request = URLRequest(
+            url: genreList_url!,
+            cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalCacheData,
             timeoutInterval: 10)
         
-        let genreList_session = NSURLSession(
-            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+        let genreList_session = URLSession(
+            configuration: URLSessionConfiguration.default,
             delegate: nil,
-            delegateQueue: NSOperationQueue.mainQueue()
+            delegateQueue: OperationQueue.main
         )
         
-        let genreList_task: NSURLSessionDataTask = genreList_session.dataTaskWithRequest(genreList_request,
+        let genreList_task: URLSessionDataTask = genreList_session.dataTask(with: genreList_request,
             completionHandler: { (dataOrNil, response, error) in
                 if let data = dataOrNil {
-                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
-                        data, options:[]) as? NSDictionary {
-                            MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    if let responseDictionary = try! JSONSerialization.jsonObject(
+                        with: data, options:[]) as? NSDictionary {
+                            MBProgressHUD.hide(for: self.view, animated: true)
                             let genreDic: [NSDictionary] = (responseDictionary["genres"] as! [NSDictionary])
                             let tmpList : NSMutableDictionary = NSMutableDictionary()
                             for genreMap in genreDic{
@@ -63,29 +63,29 @@ class MovieViewerTabBarController: UITabBarController {
     // Makes a network request to get updated data
     // Updates the tableView with the new data
     // Hides the RefreshControl
-    func refreshControlAction(refreshControl: UIRefreshControl) {
+    func refreshControlAction(_ refreshControl: UIRefreshControl) {
         
         // ... Create the NSURLRequest (myRequest) ...
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
-        let request = NSURLRequest(URL: url!)
+        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let request = URLRequest(url: url!)
         // Configure session so that completion handler is executed on main UI thread
-        let session = NSURLSession(
-            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+        let session = URLSession(
+            configuration: URLSessionConfiguration.default,
             delegate:nil,
-            delegateQueue:NSOperationQueue.mainQueue()
+            delegateQueue:OperationQueue.main
         )
         // Display HUD right before the request is made
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
+        let task : URLSessionDataTask = session.dataTask(with: request,
             completionHandler: { (dataOrNil, response, error) in
                 
                 // ... Use the new data to update the data source ...
                 if let data = dataOrNil {
-                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
-                        data, options:[]) as? NSDictionary {
-                            MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    if let responseDictionary = try! JSONSerialization.jsonObject(
+                        with: data, options:[]) as? NSDictionary {
+                            MBProgressHUD.hide(for: self.view, animated: true)
                             
                             self.movies = responseDictionary["results"] as? [NSDictionary]
                             // Tell the refreshControl to stop spinning

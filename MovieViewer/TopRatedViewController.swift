@@ -23,25 +23,25 @@ class TopRatedViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string: "http://api.themoviedb.org/3/movie/top_rated?api_key=\(apiKey)")
-        let request = NSURLRequest(URL: url!)
+        let url = URL(string: "http://api.themoviedb.org/3/movie/top_rated?api_key=\(apiKey)")
+        let request = URLRequest(url: url!)
         // Configure session so that completion handler is executed on main UI thread
-        let session = NSURLSession(
-            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+        let session = URLSession(
+            configuration: URLSessionConfiguration.default,
             delegate:nil,
-            delegateQueue:NSOperationQueue.mainQueue()
+            delegateQueue:OperationQueue.main
         )
         // Display HUD right before the request is made
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
+        let task : URLSessionDataTask = session.dataTask(with: request,
             completionHandler: { (dataOrNil, response, error) in
                 
                 // ... Use the new data to update the data source ...
                 if let data = dataOrNil {
-                    if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
-                        data, options:[]) as? NSDictionary {
-                            MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    if let responseDictionary = try! JSONSerialization.jsonObject(
+                        with: data, options:[]) as? NSDictionary {
+                            MBProgressHUD.hide(for: self.view, animated: true)
                             
                             self.movies = (responseDictionary["results"] as? [NSDictionary])!
                             self.collectionView?.reloadData()
@@ -71,19 +71,19 @@ class TopRatedViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.movies.count
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TopRatedCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TopRatedCell
     
         // Configure the cell
         let movie = movies[indexPath.row]
         if let posterPath = movie["poster_path"] as? String {
             let posterBaseUrl = "http://image.tmdb.org/t/p/w500"
-            let posterUrl = NSURL(string: posterBaseUrl + posterPath)
-            cell.posterView.setImageWithURL(posterUrl!)
+            let posterUrl = URL(string: posterBaseUrl + posterPath)
+            cell.posterView.setImageWith(posterUrl!)
         }
         cell.title.text = movie["title"] as? String
         cell.rating.text = String(format: "%.1f", movie["vote_average"] as! Float)
@@ -96,21 +96,21 @@ class TopRatedViewController: UICollectionViewController {
         cell.star.alpha = 0
         cell.rating.alpha = 0
         
-        UIView.animateWithDuration(0.6, animations: {
+        UIView.animate(withDuration: 0.6, animations: {
             // This causes first view to fade in and second view to fade out
             cell.posterView.transform.ty = 0
             cell.posterView.alpha = 1
             
         })
         
-        UIView.animateWithDuration(0.2, delay: 0.7, options: [], animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.7, options: [], animations: {
                 cell.title.transform.ty = 0
                 cell.title.alpha = 1
             
             }, completion: { finished in
         })
         
-        UIView.animateWithDuration(0.2, delay: 1.0 + (Double(indexPath.row)%9.0)*0.1, options: [], animations: {
+        UIView.animate(withDuration: 0.2, delay: 1.0 + (Double(indexPath.row).truncatingRemainder(dividingBy: 9.0))*0.1, options: [], animations: {
                 cell.star.alpha = 1
                 cell.rating.alpha = 1
             
